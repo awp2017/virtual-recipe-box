@@ -5,6 +5,7 @@ Administratorul poate crea membrii noi. Totodata, el poate sterge comentariile i
 
 Diagrama cazurilor de utilizare: 
 
+![alt text](https://github.com/awp2017/virtual-recipe-box/edit/master/Images/AdminDiagram.jpg) 
 Figure 1-Cazuri de utilizare - administrator
 
 Administratorul utilizează aplicația prin intermediul interfeței de administrare. Acesta poate administra toate retetele, utilizatorii și  comentariile.
