@@ -5,17 +5,24 @@ Administratorul poate crea membrii noi. Totodata, el poate sterge comentariile i
 
 Diagrama cazurilor de utilizare: 
 
-![alt text](https://github.com/awp2017/virtual-recipe-box/edit/master/Images/AdminDiagram.jpg) 
-Figure 1-Cazuri de utilizare - administrator
-
+<p align="center">
+  <img src="Images/AdminDiagram.jpg" width="350"/>
+</p>
+Figure 1-Cazuri de utilizare – administrator
 Administratorul utilizează aplicația prin intermediul interfeței de administrare. Acesta poate administra toate retetele, utilizatorii și  comentariile.
 
  
+<p align="center">
+  <img src="Images/Untitled Diagram.jpg" width="350"/>
+</p>
 Figure 2-Cazuri de utilizare – vizitator
 Vizitatorul poate vizualiza lista retetelor. Pentru fiecare reteta poate vedea detalii si comentariile adaugate la aceasta.
 
- 
+<p align="center">
+  <img src="Images/UserDiagram.jpg" width="350"/>
+</p> 
 Figure 3 - Cazuri de utilizare - Utilizator inregistrat
+
 Utilizatorul inregistrat:
 •	poate vizualiza lista de retete; pentru fiecare reteta acesta poate vizualiza detaliile si comentariile adaugate;
 •	poate adauga comentarii la o reteta sau o poate adauga in lista retetelor favorite;
@@ -23,10 +30,12 @@ Utilizatorul inregistrat:
 •	poate vizualiza lista reteteleor favorite si poate sterge din aceasta retetele ce nu mai sunt de interes. 
 
 Schema bazei de date:
-
- 
+<p align="center">
+  <img src="Images/DB.jpg" width="350"/>
+</p>
 Figure 4 - Schema bazei de date
 Aplicatia utilizeaza urmatoarele structuri fundamentale:
+
 •	Recipe contine:
 o	Nume – tip TEXT, obligatoriu
 o	Categorie – tip CHOICE (variante disponibile: Desert, Fel principal, Aperitive/Salate, Supe), obligatoriu
