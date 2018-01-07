@@ -25,7 +25,7 @@ SECRET_KEY = '$^e0%z!dqdzems$u^x6y1xrh7p=b!l+2xvd0-2r*$kf(&qi+&v'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'RecipeApp',
 ]
 
 MIDDLEWARE = [
@@ -77,6 +78,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'USER': 'mydatabaseuser',
+        'PASSWORD': 'mypassword'
     }
 }
 
