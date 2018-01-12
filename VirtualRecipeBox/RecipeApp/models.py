@@ -19,5 +19,9 @@ class Recipe(models.Model):
     updated = models.DateTimeField(auto_now=True)
     id_user = models.ForeignKey(User)
 
+class Favourite(models.Model):
+    id_recipe = models.ForeignKey(Recipe, on_delete=models.CASCADE)
+    id_user = models.ForeignKey(User, on_delete = models.CASCADE)
+
     def __str__(self):
         return self.name

@@ -16,6 +16,9 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from VirtualRecipeBox.RecipeApp import views
+
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
+    url(r'^$', views.FavRecipeListView.as_view(), name='favourites')
 ]
