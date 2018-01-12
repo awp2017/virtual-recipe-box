@@ -16,6 +16,7 @@ class RecipeListView(ListView):
     model = Recipe;
     context_object_name = 'recipes'
 
+
 class FavouritesListView(ListView):
     template_name = 'favourites.html'
     model = Favourite
