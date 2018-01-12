@@ -7,5 +7,8 @@ urlpatterns = [
     url(r'^recipes/$',
         views.RecipeListView.as_view(),
         name='recipe_list'),
+    url(r'^favourites/(?P<pk>[0-9]+)/$',
+        views.FavouritesListView.as_view(),
+        name='favourites_list'),
 ]
 
