@@ -1,7 +1,7 @@
  <nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">VirtualRecipeBox</a>
+      <a class="navbar-brand" href="#">Virtual Recipe Box</a>
     </div>
     <ul class="nav navbar-nav">
       <li ><a href="#">Home</a></li>
@@ -16,7 +16,7 @@
         </ul>
       </li>
         {% if request.user.is_authenticated %}
-        <li><a href="#">Favourites</a></li>
+        <li><a href="{% url 'favourites_list' pk=request.user.id %}">Favourites</a></li>
         <li><a href="#">My Recipes</a></li>
         <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Logout</a></li>
         {% else %}

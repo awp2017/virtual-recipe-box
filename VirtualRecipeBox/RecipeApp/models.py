@@ -14,10 +14,12 @@ class Recipe(models.Model):
     ]
     )
     no_portions = models.IntegerField()
-    text= models.TextField(max_length=10000)
+    text = models.TextField(max_length=10000)
     created = models.DateTimeField(auto_now_add=True)
     updated = models.DateTimeField(auto_now=True)
     id_user = models.ForeignKey(User)
 
     def __str__(self):
         return self.name
+
+
