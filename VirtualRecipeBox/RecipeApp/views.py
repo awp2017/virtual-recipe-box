@@ -13,7 +13,8 @@ from django.views.generic import (
 )
 
 # Create your views here.
-from VirtualRecipeBox.RecipeApp.models import Favourite
+from .forms import AddRecipeForm
+from .models import Favourite, Recipe
 
 
 class FavRecipeListView(ListView):
@@ -23,3 +24,9 @@ class FavRecipeListView(ListView):
 
     def get_queryset(self, *args, **kwargs):
         return Favourite.objects.all()
+
+
+class RecipeCreateView(LoginRequiredMixin, CreateView):
+    template_name = 'addrecipe.html'
+    form_class = AddRecipeForm
+    model = Recipe
