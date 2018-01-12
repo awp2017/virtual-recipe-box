@@ -21,3 +21,12 @@ class Recipe(models.Model):
 
     def __str__(self):
         return self.name
+
+class Ingredient(models.Model):
+    name = models.CharField(max_length=45)
+    cantity = models.FloatField(null=False)
+    unit = models.CharField(max_length=10)
+    id_receip = models.ForeignKey(Recipe)
+
+    def __str__(self):
+        return self.name
