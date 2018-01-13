@@ -4,27 +4,27 @@
   {% load static %}
 {% block content %}
 				<div>
-					<a href="index.html"><img src="{% static "images/turkey.jpg" %}" alt="Image"></a>
+					<a href="#"><img src="{% static "images/turkey.jpg" %}" alt="Image"></a>
 				</div>
 			</div>
 			<div class="footer">
 				<ul>    <li>
-						<h2><a href="blog.html">Starters/Salads</a></h2>
-						<a href="blog.html"><img src="{% static "images/salad.jpg" %}" style="width:340px; height:245px" alt="Image"></a>
+						<h2><a href="{% url 'category_list' category=4 %}">Starters/Salads</a></h2>
+						<a href="{% url 'category_list' category=4 %}"><img src="{% static "images/salad.jpg" %}" style="width:340px; height:245px" alt="Image"></a>
 					</li>
                                         <li>
-						<h2><a href="videos.html">Soups</a></h2>
-						<a href="videos.html"><img src="{% static "images/soup.jpg" %}" style="width:340px; height:245px" alt="Image"></a>
+						<h2><a href="{% url 'category_list' category=1 %}">Soups</a></h2>
+						<a href="{% url 'category_list' category=1 %}"><img src="{% static "images/soup.jpg" %}" style="width:340px; height:245px" alt="Image"></a>
 					</li>
                                 </ul>
 				<ul>
                                        <li>
-						<h2><a href="recipes.html">Main Courses</a></h2>
-						<a href="recipes.html"><img src="{% static "images/a-z.jpg" %}" alt="Image" ></a>
+						<h2><a href="{% url 'category_list' category=3 %}">Main Courses</a></h2>
+						<a href="{% url 'category_list' category=3 %}"><img src="{% static "images/a-z.jpg" %}" alt="Image" ></a>
 					</li>
 					<li>
-						<h2><a href="featured.html">Desserts</a></h2>
-						<a href="featured.html"><img src="{% static "images/featured.jpg" %}" alt="Image"></a>
+						<h2><a href="{% url 'category_list' category=2 %}">Desserts</a></h2>
+						<a href="{% url 'category_list' category=2 %}"><img src="{% static "images/featured.jpg" %}" alt="Image"></a>
 					</li>
 
 				</ul>

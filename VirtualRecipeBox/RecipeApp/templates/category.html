@@ -1,0 +1,28 @@
+{% extends 'layout.html' %}
+{% load static %}
+{% block title %}All recipes{% endblock %}
+
+{% block content %}
+<div id="content">
+					<div>
+						<ul>
+                        {% for recipe in recipe_list %}
+							<li>
+								<a style="width:25%" href="#"><img style="height:161px;width:161px"src="{{ recipe.image.url }}" alt="Image"></a>
+								<div style="">
+									<h3><a href="#">{{ recipe.name }}</a></h3><div>
+                                    <p></p>
+                                        <ul style="padding:5px;">
+                                            <li><strong>No. of Portions:</strong>{{ recipe.no_portions }}</li>
+                                            <li><strong>Category:</strong>{{ recipe.get_category_display}}</li>
+                                            <li><strong>Created at:</strong>{{ recipe.created }}</li>
+                                            <li><strong>Posted by:</strong>{{ recipe.id_user.username }}</li>
+                                        </ul>
+								</div></div>
+							</li>
+                        {% endfor %}
+                        </ul>
+                    </div>
+</div>
+
+{% endblock %}

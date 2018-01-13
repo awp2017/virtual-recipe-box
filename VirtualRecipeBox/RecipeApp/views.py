@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-
 from django.shortcuts import render
 from django.views.generic import (TemplateView, ListView, CreateView, DeleteView)
 from RecipeApp.models import Recipe, Favourite
@@ -31,10 +30,17 @@ class FavouritesListView(ListView):
         return Favourite.objects.all()
 
 
-# class RecipeCreateView(CreateView):
-#     template_name = 'addrecipe.html'
-#     form_class = AddRecipeForm
-#     model = Recipe
+#class RecipeCreateView(LoginRequiredMixin, CreateView):
+    #template_name = 'addrecipe.html'
+    #form_class = AddRecipeForm
+    #model = Recipe
+
+class CategoryListView(ListView):
+    template_name = 'category.html'
+    model = Recipe
+
+    def get_queryset(self):
+        return Recipe.objects.filter(category=self.kwargs['category'])
 
 class MyRecipesListView(ListView):
     template_name = 'myrecipes.html'
