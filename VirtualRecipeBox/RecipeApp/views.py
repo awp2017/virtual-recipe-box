@@ -6,7 +6,7 @@ from django.views.generic import (TemplateView, ListView,)
 from RecipeApp.models import Recipe, Favourite
 # Create your views here.
 
-from .forms import AddRecipeForm
+#from .forms import AddRecipeForm
 from .models import Favourite, Recipe
 
 
@@ -30,8 +30,8 @@ class FavouritesListView(ListView):
         return Favourite.objects.all()
 
 
-class RecipeCreateView(LoginRequiredMixin, CreateView):
-    template_name = 'addrecipe.html'
-    form_class = AddRecipeForm
-    model = Recipe
+#class RecipeCreateView(LoginRequiredMixin, CreateView):
+    #template_name = 'addrecipe.html'
+    #form_class = AddRecipeForm
+    #model = Recipe
 
