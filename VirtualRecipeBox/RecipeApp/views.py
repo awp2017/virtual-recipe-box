@@ -43,10 +43,9 @@ class RecipeCreateView(CreateView):
 
     def get_success_url(self, *args, **kwargs):
         return reverse(
-            'recipe_list',
-            kwargs={'pk': self.object.pk}
+            'recipe_list'
         )
 class RecipeDetailView(DetailView):
     template_name = 'details.html'
     model = Recipe
-    context_object_name = 'recipes'
+    context_object_name = 'recipe'

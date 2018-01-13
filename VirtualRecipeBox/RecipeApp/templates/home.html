@@ -21,8 +21,8 @@
             <td>{{ recipe.name }}</td>
             <td>{{ recipe.get_category_display }}</td>
             <td>
-                <a href="#">
-                    <button  type="button" onclick="details.html">
+                <a href="{% url 'recipe_detail' pk_user=recipe.id_user.pk pk=recipe.pk %}">
+                    <button  type="button" >
                         Details
                     </button>
                 </a>

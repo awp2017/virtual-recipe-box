@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block title %}{{ Recipe.title }}{% endblock %}
+
+{% block content %}
+<h1>{{ Recipe.title }}</h1>
+
+
+<thead style="background-color:#4B0082; color: white">
+        <tr>
+            <th scope="col">Name</th>
+            <th scope="col">Category</th>
+            <th scope="col">Text</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr >
+            <td>{{ recipe.name }}</td>
+            <td>{{ recipe.category }}</td>
+            <td>{{ recipe.text }}</td>
+            <td>
+                <a href="#">
+                </a>
+            </td>
+        </tr>
+    </tbody>
+
+{% endblock %}

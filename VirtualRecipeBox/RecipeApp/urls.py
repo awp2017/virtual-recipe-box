@@ -12,7 +12,7 @@ urlpatterns = [
         name='favourites_list'),
     url(r'^user/(?P<pk>[0-9]+)/recipes/add/$', views.RecipeCreateView.as_view(),
         name='add_recipe'),
-    url(r'^recipes/(?P<pk>[0-9]+)/$',
+    url(r'^user/(?P<pk_user>[0-9]+)/recipe/(?P<pk>[0-9]+)/$',
         views.RecipeDetailView.as_view(),
         name='recipe_detail'),
 ]
