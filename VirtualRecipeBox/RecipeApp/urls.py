@@ -10,5 +10,8 @@ urlpatterns = [
     url(r'^favourites/(?P<pk>[0-9]+)/$',
         views.FavouritesListView.as_view(),
         name='favourites_list'),
+    url(r'^category/(?P<category>[1-4]{1})/$',
+        views.CategoryListView.as_view(),
+        name='category_list'),
 ]
 
