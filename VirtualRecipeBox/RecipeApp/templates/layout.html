@@ -23,7 +23,7 @@
 						<a href="{% url  'recipe_list' %}">All Recipes</a>
 					</li>
 					<li>
-						<a href="#">Add Recipe</a>
+						<a href="{%url 'add_recipe' pk=request.user.pk %}">Add Recipe</a>
 					</li>
 					<li>
 						<a href="#">My Recipes</a>
