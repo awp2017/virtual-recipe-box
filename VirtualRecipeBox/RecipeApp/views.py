@@ -6,7 +6,7 @@ from django.views.generic import (TemplateView, ListView, CreateView)
 from RecipeApp.models import Recipe, Favourite
 # Create your views here.
 
-#from .forms import AddRecipeForm
+from .forms import AddRecipeForm
 from .models import Favourite, Recipe
 
 
