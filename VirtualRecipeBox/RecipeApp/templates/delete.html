@@ -1,0 +1,12 @@
+{% extends 'layout.html' %}
+
+{% block title %}Delete {{ Recipe.name }}{% endblock %}
+
+{% block content %}
+    <p>Are you sure you want to delete {{ Recipe.name }}?</p>
+    <form method="post" enctype="multipart/formdata">
+        {% csrf_token %}
+        <button type="submit">Yes</button>
+        <a href="{% url 'my_recipe_list' pk=user.pk %}">No</a>
+    </form>
+{% endblock %}

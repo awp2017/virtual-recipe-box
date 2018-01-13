@@ -1,5 +1,6 @@
 from django.conf.urls import url
-from RecipeApp import views
+from . import views
+
 
 urlpatterns = [
     url(r'^$',
@@ -10,5 +11,11 @@ urlpatterns = [
     url(r'^favourites/(?P<pk>[0-9]+)/$',
         views.FavouritesListView.as_view(),
         name='favourites_list'),
+    url(r'^myrecipes/(?P<pk>[0-9]+)/$',
+        views.MyRecipesListView.as_view(),
+        name='my_recipe_list'),
+    url(r'^delete/(?P<pk>[0-9]+)/$',
+        views.RecipeDeleteView.as_view(),
+        name='delete_recipe')
 ]
 

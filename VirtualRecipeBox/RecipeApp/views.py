@@ -2,11 +2,12 @@
 from __future__ import unicode_literals
 
 from django.shortcuts import render
-from django.views.generic import (TemplateView, ListView, CreateView)
+from django.views.generic import (TemplateView, ListView, CreateView, DeleteView)
 from RecipeApp.models import Recipe, Favourite
+from django.core.urlresolvers import reverse
 # Create your views here.
 
-from .forms import AddRecipeForm
+#from .forms import AddRecipeForm
 from .models import Favourite, Recipe
 
 
@@ -35,10 +36,17 @@ class FavouritesListView(ListView):
 #     form_class = AddRecipeForm
 #     model = Recipe
 
-class MyRecipesView(ListView):
+class MyRecipesListView(ListView):
     template_name = 'myrecipes.html'
     model = Recipe
     context_object_name = 'myrecipes'
 
-    def get_queryset(self, *args, **kwargs):
-        return Recipe.objects.all()
+class RecipeDeleteView(DeleteView):
+    template_name = 'delete.html'
+    model = Recipe
+
+    def get_success_url(self, *args, **kwargs):
+        return reverse(
+            'my_recipe_list',
+            kwargs = {'pk': self.object.pk}
+         )
