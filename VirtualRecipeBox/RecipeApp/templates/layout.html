@@ -22,21 +22,25 @@
 					<li>
 						<a href="{% url  'recipe_list' %}">All Recipes</a>
 					</li>
+                    {% if request.user.is_authenticated %}
 					<li>
 						<a href="#">Add Recipe</a>
 					</li>
 					<li>
-						<a href="{% url 'my_recipe_list'  %}">My Recipes</a>
+						<a href="{% url 'my_recipe_list' pk=user.pk  %}">My Recipes</a>
 					</li>
 					<li>
-						<a href="#">Favourites</a>
+						<a href="{% url 'favourites_list' pk=request.user.pk %}">Favourites</a>
 					</li>
+                    <li>
+						<a href="#">Logout</a>
+					</li>
+                    {% else %}
+
 					<li>
 						<a href="#">Login</a>
 					</li>
-                                        <li>
-						<a href="#">Logout</a>
-					</li>
+                    {% endif %}
 				</ul>
 			</div>
 			<div class="body">

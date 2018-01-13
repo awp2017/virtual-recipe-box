@@ -13,5 +13,9 @@ urlpatterns = [
     url(r'^category/(?P<category>[1-4]{1})/$',
         views.CategoryListView.as_view(),
         name='category_list'),
+    url(r'^myrecipes/(?P<pk>[0-9]+)/$',
+        views.MyRecipesView.as_view(),
+        name='my_recipe_list')
+
 ]
 
