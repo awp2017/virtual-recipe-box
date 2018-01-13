@@ -36,6 +36,3 @@ class Comments(models.Model):
     text = models.TextField(max_length=500)
     id_recipe = models.ForeignKey(Recipe)
     id_user = models.ForeignKey(User)
-
-    def __str__(self):
-        return self.text
