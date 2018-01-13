@@ -1,0 +1,51 @@
+{% extends 'layout.html' %}
+
+{% block title %}My recipes{% endblock %}
+
+{% block content %}
+
+<table class="table table-bordered table-hover">
+
+    <thead  style="background-color:#4B0082; color: white">
+        <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Name</th>
+            <th scope="col">Category</th>
+            <th scope="col"></th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for recipe in myrecipes %}
+            {% if Recipe.id_user.fk == request.user.pk %}
+        <tr >
+            <td>{{ Recipe.pk }}</td>
+            <td >{{ Recipe.name }}</td>
+            <td >{{ Recipe.category }}</td>
+            <td>
+                <a href="#">
+                    <button type="button">
+                        Detalii
+                    </button>
+                </a>
+            </td>
+            <td>
+                <a href="#">
+                    <button type="button">
+                        Editare
+                    </button>
+                </a>
+            </td>
+             <td>
+                <a href="#">
+                    <button type="button">
+                        Stergere
+                    </button>
+                </a>
+            </td>
+
+        </tr>
+            {% endif %}
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
