@@ -6,6 +6,10 @@ from django.views.generic import (TemplateView, ListView,)
 from RecipeApp.models import Recipe, Favourite
 # Create your views here.
 
+from .forms import AddRecipeForm
+from .models import Favourite, Recipe
+
+
 
 class MyTemplateView(TemplateView):
     template_name = 'index.html'
@@ -22,5 +26,12 @@ class FavouritesListView(ListView):
     model = Favourite
     context_object_name = 'favourites'
 
+    def get_queryset(self, *args, **kwargs):
+        return Favourite.objects.all()
 
+
+class RecipeCreateView(LoginRequiredMixin, CreateView):
+    template_name = 'addrecipe.html'
+    form_class = AddRecipeForm
+    model = Recipe
 
