@@ -17,6 +17,12 @@
                                             <li><strong>Category:</strong>{{ recipe.get_category_display}}</li>
                                             <li><strong>Created at:</strong>{{ recipe.created }}</li>
                                             <li><strong>Posted by:</strong>{{ recipe.id_user.username }}</li>
+                                            {% if request.user.is_authenticated %}
+                                            <form action="" method="post">{% csrf_token %}
+
+                                            <input type="submit" value="Add to favorites" />
+                                            </form>
+                                            {% endif %}
                                         </ul>
 								</div></div>
 							</li>

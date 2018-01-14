@@ -1,10 +1,22 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'layout.html' %}
+
+{% block title %}{{ Recipe.title }}{% endblock %}
+
+{% block content %}
+    <div id="content">
+					<div>
+						<div>
+							<h3>{{ recipe.name }}</h3>
+							<a href="#"><img style="width:660px;height:400px"src="{{ recipe.image.url }}" alt="Image"></a>
+
+							<h5>DIRECTIONS</h5>
+							<p>{{ recipe.text }}</p>
+                            <ul>
+                                <li> <strong>Category: </strong>{{ recipe.get_category_display }}</li>
+                                <li> <strong>No. portions: </strong>{{ recipe.no_portions }}</li>
+                                <li> <strong>Posted: </strong>{{ recipe.created }}</li>
+                            </ul>
+						</div>
+					</div>
+				</div>
+{% endblock %}

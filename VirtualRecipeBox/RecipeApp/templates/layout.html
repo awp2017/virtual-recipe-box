@@ -24,7 +24,7 @@
 					</li>
                     {% if request.user.is_authenticated %}
 					<li>
-						<a href="#">Add Recipe</a>
+						<a href="{% url 'add_recipe' pk=user.pk %}">Add Recipe</a>
 					</li>
 					<li>
 						<a href="{% url 'my_recipe_list' pk=user.pk  %}">My Recipes</a>
@@ -33,12 +33,12 @@
 						<a href="{% url 'favourites_list' pk=request.user.pk %}">Favourites</a>
 					</li>
                     <li>
-						<a href="#">Logout</a>
+						<a href="{% url 'logout' %}">Logout</a>
 					</li>
                     {% else %}
 
 					<li>
-						<a href="#">Login</a>
+						<a href="{% url 'login' %}">Login</a>
 					</li>
                     {% endif %}
 				</ul>

@@ -19,6 +19,17 @@ urlpatterns = [
         name='my_recipe_list'),
     url(r'^delete/(?P<pk>[0-9]+)/$',
         views.RecipeDeleteView.as_view(),
-        name='delete_recipe')
+        name='delete_recipe'),
+    url(r'^login',
+        views.login_view,
+        name="login"),
+    url(r'^logout/$',
+        views.logout_view,
+        name="logout"),
+    url(r'^user/(?P<pk>[0-9]+)/recipes/add/$', views.RecipeCreateView.as_view(),
+        name='add_recipe'),
+    url(r'^user/(?P<pk_user>[0-9]+)/recipe/(?P<pk>[0-9]+)/$',
+        views.RecipeDetailView.as_view(),
+        name='recipe_detail'),
 ]
 

@@ -20,7 +20,7 @@
                                                     <li><strong>Category:</strong>{{ recipe.get_category_display}}</li>
                                                     <li><strong>Created at:</strong>{{ recipe.created }}</li>
                                                     <li>
-                                                        <a href="#"><button type="button">Details</button></a>
+                                                        <a href="{% url 'recipe_detail' pk_user=recipe.id_user.pk pk=recipe.pk %}"><button type="button">Details</button></a>
                                                         <a href="{% url 'delete_recipe' pk=recipe.pk %}"><button type="button">Delete</button></a>
                                                     </li>
                                                 </ul>

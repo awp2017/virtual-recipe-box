@@ -1,10 +1,25 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'layout.html' %} {% block title %}Login{% endblock %} {% block content %}
+<div>
+    <div>
+<h1 style="padding-left:35%;padding-top:100px">Login</h1>
+
+{% if form.errors %}
+<div role="alert">
+    {{ form.errors }}
+</div>
+{% endif %}
+   <form method="POST" enctype="multipart/formdata" style="width:80%;height:300px" class="form">
+    {% csrf_token %}
+    <div style="padding-left:30%" >
+        <label for="id_username">Username:</label>
+        <input type="text" name="username" required="" id="id_username"><br>
+        <label for="id_password">Password:</label>
+        <input type="password" name="password" required="" id="id_password" ><br>
+    <button  type="submit" style="background-color:#483D8B; color: white">Login</button>
+    </div>
+   </form>
+    </div>
+</div>
+
+{% endblock %}
+
