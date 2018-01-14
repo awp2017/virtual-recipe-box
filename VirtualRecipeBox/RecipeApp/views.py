@@ -1,8 +1,9 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.shortcuts import render
-from django.views.generic import (TemplateView, ListView, CreateView)
+from django.views.generic import (TemplateView, ListView, CreateView, DeleteView)
 from RecipeApp.models import Recipe, Favourite
+from django.core.urlresolvers import reverse
 # Create your views here.
 
 #from .forms import AddRecipeForm
@@ -29,20 +30,10 @@ class FavouritesListView(ListView):
         return Favourite.objects.all()
 
 
-#class RecipeCreateView(LoginRequiredMixin, CreateView):
-    #template_name = 'addrecipe.html'
-    #form_class = AddRecipeForm
-    #model = Recipe
-
-
-class MyRecipesView(ListView):
-    template_name = 'myrecipes.html'
-    model = Recipe
-    context_object_name = 'myrecipes'
-
-    def get_queryset(self, *args, **kwargs):
-        return Recipe.objects.all()
-
+# class RecipeCreateView(CreateView):
+#     template_name = 'addrecipe.html'
+#     form_class = AddRecipeForm
+#     model = Recipe
 
 class CategoryListView(ListView):
     template_name = 'category.html'
@@ -51,4 +42,17 @@ class CategoryListView(ListView):
     def get_queryset(self):
         return Recipe.objects.filter(category=self.kwargs['category'])
 
+class MyRecipesListView(ListView):
+    template_name = 'myrecipes.html'
+    model = Recipe
+    context_object_name = 'myrecipes'
 
+class RecipeDeleteView(DeleteView):
+    template_name = 'delete.html'
+    model = Recipe
+
+    def get_success_url(self, *args, **kwargs):
+        return reverse(
+            'my_recipe_list',
+            kwargs = {'pk': self.object.pk}
+         )
